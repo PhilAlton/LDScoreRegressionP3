@@ -6,7 +6,7 @@ Iterativey re-weighted least squares.
 '''
 from __future__ import division
 import numpy as np
-import jackknife as jk
+import ldscore.jackknife as jk
 
 
 class IRWLS(object):
