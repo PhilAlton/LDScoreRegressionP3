@@ -15,6 +15,7 @@ import ldscore.sumstats as sumstats
 import ldscore.regressions as reg
 import numpy as np
 import pandas as pd
+import functools
 from subprocess import call
 from itertools import product
 import time, sys, traceback, argparse
