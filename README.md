@@ -94,7 +94,8 @@ New: DataFrame[someDataFrameIndex.values].values
 - Miscellaneous
 ```python
 ### opening logging file changed from binary to text ('wb' arg changed to 'w')
-### binary faled as msg later in the class is a string, so msg would have to be decoded to binary
+### binary failed as msg (variable later in the class) is a string, so msg would have to be decoded to binary
+### in Python 3, string conversion to binary no longer happens automatically.
 ```
 ```python
 Old: 
