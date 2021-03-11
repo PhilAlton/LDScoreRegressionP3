@@ -361,12 +361,12 @@ def ldscore(args, log):
 
     # print .M
     fout_M = open(args.out + '.'+ file_suffix +'.M','wb')
-    print ('\t'.join(map(str,M)),>>fout_M)
+    print ('\t'.join(map(str,M)),fout_M)
     fout_M.close()
 
     # print .M_5_50
     fout_M_5_50 = open(args.out + '.'+ file_suffix +'.M_5_50','wb')
-    print (>>fout_M_5_50, '\t'.join(map(str,M_5_50)))
+    print ('\t'.join(map(str,M_5_50)),fout_M_5_50)
     fout_M_5_50.close()
 
     # print annot matrix
