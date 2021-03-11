@@ -24,6 +24,15 @@ import sys
 sys.path.append('/content/LDScoreRegressionP3')
 sys.path.append('/content/LDScoreRegressionP3/ldscore')
 ```
+The following commands (in a new cell) should now work:
+```python
+!python "/content/LDScoreRegressionP3/ldsc.py" -h
+```
+and
+```python
+!python "/content/LDScoreRegressionP3/munge_sumstats.py" -h
+```
+This should generate a command list / function help for each of these commands. 
 
 ## Where Can I Get LD Scores?
 
