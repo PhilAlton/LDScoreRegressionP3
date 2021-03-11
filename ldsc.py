@@ -81,7 +81,7 @@ class Logger(object):
         Print to log file and stdout with a single command.
 
         '''
-        print (msg,file=self.log_fh)
+        print (msg.encode(),file=self.log_fh)
         print (msg)
 
 
