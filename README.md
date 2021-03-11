@@ -91,6 +91,25 @@ New: DataFrame.iloc[...]
 Old: DataFrame.as_matrix(columns=someDataFrameIndex)
 New: DataFrame[someDataFrameIndex.values].values
 ```
+- Miscellaneous
+```python
+### opening logging file changed from binary to text ('wb' arg changed to 'w')
+### binary faled as msg later in the class is a string, so msg would have to be decoded to binary
+```
+```python
+Old: 
+  class Logger(object):
+  ...
+  self.log_fh = open(fh, 'wb')
+  ...
+New:
+  class Logger(object):
+  ...
+  self.log_fh = open(fh, 'w')
+  ...
+ ```
+ 
+ 
 - This is on-going, so please do reach out with issues if you find any errors, especially if these worked previously.
 
 
