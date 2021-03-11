@@ -248,7 +248,7 @@ def parse_dat(dat_gen, convert_colname, merge_alleles, log, args):
         if len(wrong_types) > 0:
             raise ValueError('Columns {} are expected to be numeric'.format(wrong_types))
 
-        ii = np.array([True for i in xrange(len(dat))])
+        ii = np.array([True for i in range(len(dat))])
         if args.merge_alleles:
             old = ii.sum()
             ii = dat.SNP.isin(merge_alleles.SNP)
@@ -257,7 +257,7 @@ def parse_dat(dat_gen, convert_colname, merge_alleles, log, args):
                 continue
 
             dat = dat[ii].reset_index(drop=True)
-            ii = np.array([True for i in xrange(len(dat))])
+            ii = np.array([True for i in range(len(dat))])
 
         if 'INFO' in dat.columns:
             old = ii.sum()
