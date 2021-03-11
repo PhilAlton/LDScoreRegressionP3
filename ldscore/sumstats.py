@@ -389,8 +389,8 @@ def estimate_rg(args, log):
                                                (args.samp_prev, '--samp-prev'),
                                                (args.pop_prev, '--pop-prev')))
     if args.no_intercept:
-        args.intercept_h2 = [1 for _ in xrange(n_pheno)]
-        args.intercept_gencov = [0 for _ in xrange(n_pheno)]
+        args.intercept_h2 = [1 for _ in range(n_pheno)]
+        args.intercept_gencov = [0 for _ in range(n_pheno)]
     p1 = rg_paths[0]
     out_prefix = args.out + rg_files[0]
     M_annot, w_ld_cname, ref_ld_cnames, sumstats, _ = _read_ld_sumstats(args, log, p1,
@@ -449,7 +449,7 @@ def _get_rg_table(rg_paths, RG, args):
     '''Print a table of genetic correlations.'''
     t = lambda attr: lambda obj: getattr(obj, attr, 'NA')
     x = pd.DataFrame()
-    x['p1'] = [rg_paths[0] for i in xrange(1, len(rg_paths))]
+    x['p1'] = [rg_paths[0] for i in range(1, len(rg_paths))]
     x['p2'] = rg_paths[1:len(rg_paths)]
     x['rg'] = map(t('rg_ratio'), RG)
     x['se'] = map(t('rg_se'), RG)
@@ -570,7 +570,7 @@ def _split_or_none(x, n):
     if x is not None:
         y = map(float, x.replace('N', '-').split(','))
     else:
-        y = [None for _ in xrange(n)]
+        y = [None for _ in range(n)]
     return y
 
 
