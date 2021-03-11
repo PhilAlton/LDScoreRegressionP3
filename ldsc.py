@@ -45,7 +45,7 @@ np.set_printoptions(precision=4)
 
 def sec_to_str(t):
     '''Convert seconds to days:hours:minutes:seconds'''
-    [d, h, m, s, n] = reduce(lambda ll, b : divmod(ll[0], b) + ll[1:], [(t, 1), 60, 60, 24])
+    [d, h, m, s, n] = functools.reduce(lambda ll, b : divmod(ll[0], b) + ll[1:], [(t, 1), 60, 60, 24])
     f = ''
     if d > 0:
         f += '{D}d:'.format(D=d)
