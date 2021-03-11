@@ -8,8 +8,22 @@ Credit to https://github.com/bulik for the python 2 implementation (full credits
 ## Getting Started
 This guide is explicity designed for use with google colab.
 Create a new google colab workbook here: https://colab.research.google.com/ (you will need a google account).
+Add the following code to the first cell and execute (click the play button):
 
+```python
+!git clone https://github.com/PhilAlton/LDScoreRegressionP3.git
 
+!pip install bitarray
+!pip install parse
+!pip install jackknife
+!pip install nose
+!pip install pybedtools
+!pip install scipy
+
+import sys
+sys.path.append('/content/LDScoreRegressionP3')
+sys.path.append('/content/LDScoreRegressionP3/ldscore')
+```
 
 ## Where Can I Get LD Scores?
 
