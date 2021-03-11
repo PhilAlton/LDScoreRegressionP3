@@ -14,11 +14,8 @@ Add the following code to the first cell and execute (click the play button):
 !git clone https://github.com/PhilAlton/LDScoreRegressionP3.git
 
 !pip install bitarray
-!pip install parse
-!pip install jackknife
 !pip install nose
 !pip install pybedtools
-!pip install scipy
 
 import sys
 sys.path.append('/content/LDScoreRegressionP3')
@@ -94,7 +91,7 @@ New: DataFrame.iloc[...]
 Old: DataFrame.as_matrix(columns=someDataFrameIndex)
 New: DataFrame[someDataFrameIndex.values].values
 ```
-- This is on-going.
+- This is on-going, so please do reach out with issues if you find any errors, especially if these worked previously.
 
 
 ## Citation
