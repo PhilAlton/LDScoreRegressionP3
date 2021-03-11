@@ -66,7 +66,7 @@ New: list(dict.values()).count()
 Old: log.log(traceback.format_exc(ex))
 New: log.log(''.join(traceback.format_exception(ex_type, ex)), tb, limit=None, chain=True)))
 ```
-- Functions management
+- modules management
 ```python
 Old: from irwls import IRWLS 
 New: from ldscore.irwls import IRWLS
