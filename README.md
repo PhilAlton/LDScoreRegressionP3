@@ -3,34 +3,12 @@ Credit to https://github.com/bulik for the python 2 implementation (full credits
 # LDSC (LD SCore) `v0.1`
 
 `ldsc` is a command line tool for estimating heritability and genetic correlation from GWAS summary statistics. `ldsc` also computes LD Scores.
-This guide is explicity designed for use with google colab.
+
 
 ## Getting Started
+This guide is explicity designed for use with google colab.
+Create a new google colab workbook here: https://colab.research.google.com/ (you will need a google account).
 
-
-
-In order to download `ldsc`, you should clone this repository via the commands
-```  
-git clone https://github.com/PhilAlton/LDScoreRegressionP3.git
-cd ldsc
-```
-
-In order to install the Python dependencies, you will need the [Anaconda](https://store.continuum.io/cshop/anaconda/) Python distribution and package manager. After installing Anaconda, run the following commands to create an environment with LDSC's dependencies:
-
-```
-conda env create --file environment.yml
-source activate ldsc
-```
-
-Once the above has completed, you can run:
-
-```
-./ldsc.py -h
-./munge_sumstats.py -h
-```
-to print a list of all command-line options. If these commands fail with an error, then something as gone wrong during the installation process. 
-
-Short tutorials describing the four basic functions of `ldsc` (estimating LD Scores, h2 and partitioned h2, genetic correlation, the LD Score regression intercept) can be found in the wiki. If you would like to run the tests, please see the wiki.
 
 
 ## Where Can I Get LD Scores?
