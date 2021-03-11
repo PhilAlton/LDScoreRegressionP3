@@ -653,7 +653,7 @@ if __name__ == '__main__':
             print ('ldsc.py -h describes options.')
     except Exception:
         ex_type, ex, tb = sys.exc_info()
-        log.log( traceback.format_exc(ex) )
+        log.log(''.join(traceback.format_exception(ex_type, ex, tb)) + '\n')
         raise
     finally:
         log.log('Analysis finished at {T}'.format(T=time.ctime()) )
