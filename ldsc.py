@@ -80,7 +80,7 @@ class Logger(object):
         Print to log file and stdout with a single command.
 
         '''
-        print >>self.log_fh, msg
+        print (>>self.log_fh, msg)
         print (msg)
 
 
@@ -361,12 +361,12 @@ def ldscore(args, log):
 
     # print .M
     fout_M = open(args.out + '.'+ file_suffix +'.M','wb')
-    print >>fout_M, '\t'.join(map(str,M))
+    print (>>fout_M, '\t'.join(map(str,M)))
     fout_M.close()
 
     # print .M_5_50
     fout_M_5_50 = open(args.out + '.'+ file_suffix +'.M_5_50','wb')
-    print >>fout_M_5_50, '\t'.join(map(str,M_5_50))
+    print (>>fout_M_5_50, '\t'.join(map(str,M_5_50)))
     fout_M_5_50.close()
 
     # print annot matrix
