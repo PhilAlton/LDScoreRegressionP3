@@ -185,7 +185,7 @@ def ldscore(args, log):
                 raise ValueError(msg)
 
         else:
-            cts_colnames = ['ANNOT'+str(i) for i in xrange(len(cts_fnames))]
+            cts_colnames = ['ANNOT'+str(i) for i in range(len(cts_fnames))]
 
         log.log('Reading numbers with which to bin SNPs from {F}'.format(F=args.cts_bin))
 
@@ -216,7 +216,7 @@ def ldscore(args, log):
             name_breaks[0] = 'min'
             name_breaks[-1] = 'max'
             name_breaks = [str(x) for x in name_breaks]
-            labs = [name_breaks[i]+'_'+name_breaks[i+1] for i in xrange(n_breaks-1)]
+            labs = [name_breaks[i]+'_'+name_breaks[i+1] for i in range(n_breaks-1)]
             cut_vec = pd.Series(pd.cut(vec, bins=cut_breaks, labels=labs))
             cts_levs.append(cut_vec)
             full_labs.append(labs)
@@ -284,7 +284,7 @@ def ldscore(args, log):
 
     if args.ld_wind_snps:
         max_dist = args.ld_wind_snps
-        coords = np.array(xrange(geno_array.m))
+        coords = np.array(range(geno_array.m))
     elif args.ld_wind_kb:
         max_dist = args.ld_wind_kb*1000
         coords = np.array(array_snps.df['BP'])[geno_array.kept_snps]
