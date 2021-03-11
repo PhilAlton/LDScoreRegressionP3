@@ -11,7 +11,7 @@ from __future__ import division
 import numpy as np
 import pandas as pd
 from scipy.stats import norm, chi2
-import jackknife as jk
+import ldscore.jackknife as jk
 from ldscore.irwls import IRWLS
 from scipy.stats import t as tdist
 from collections import namedtuple
