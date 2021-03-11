@@ -455,7 +455,7 @@ class Hsq(LD_Score_Regression):
         if self.n_annot > 1:
             if ref_ld_colnames is None:
                 ref_ld_colnames = ['CAT_' + str(i)
-                                   for i in xrange(self.n_annot)]
+                                   for i in range(self.n_annot)]
 
             out.append('Categories: ' + ' '.join(ref_ld_colnames))
 
