@@ -1,7 +1,9 @@
+Credit to https://github.com/bulik for the python 2 implementation (full credits below).
 
-# LDSC (LD SCore) `v1.0.1`
+# LDSC (LD SCore) `v0.1`
 
 `ldsc` is a command line tool for estimating heritability and genetic correlation from GWAS summary statistics. `ldsc` also computes LD Scores.
+This guide is explicity designed for use with google colab.
 
 ## Getting Started
 
@@ -9,7 +11,7 @@
 
 In order to download `ldsc`, you should clone this repository via the commands
 ```  
-git clone https://github.com/bulik/ldsc.git
+git clone https://github.com/PhilAlton/LDScoreRegressionP3.git
 cd ldsc
 ```
 
@@ -30,36 +32,6 @@ to print a list of all command-line options. If these commands fail with an erro
 
 Short tutorials describing the four basic functions of `ldsc` (estimating LD Scores, h2 and partitioned h2, genetic correlation, the LD Score regression intercept) can be found in the wiki. If you would like to run the tests, please see the wiki.
 
-## Updating LDSC
-
-You can update to the newest version of `ldsc` using `git`. First, navigate to your `ldsc/` directory (e.g., `cd ldsc`), then run
-```
-git pull
-```
-If `ldsc` is up to date, you will see 
-```
-Already up-to-date.
-```
-otherwise, you will see `git` output similar to 
-```
-remote: Counting objects: 3, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From https://github.com/bulik/ldsc
-   95f4db3..a6a6b18  master     -> origin/master
-Updating 95f4db3..a6a6b18
-Fast-forward
- README.md | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
- ```
-which tells you which files were changed. If you have modified the `ldsc` source code, `git pull` may fail with an error such as `error: Your local changes to the following files would be overwritten by merge:`. 
-
-In case the Python dependencies have changed, you can update the LDSC environment with
-
-```
-conda env update --file environment.yml
-```
 
 ## Where Can I Get LD Scores?
 
@@ -68,15 +40,7 @@ You can download [European](https://data.broadinstitute.org/alkesgroup/LDSCORE/e
 
 ## Support
 
-Before contacting us, please try the following:
-
-1. The [wiki](https://github.com/bulik/ldsc/wiki) has tutorials on [estimating LD Score](https://github.com/bulik/ldsc/wiki/LD-Score-Estimation-Tutorial), [heritability, genetic correlation and the LD Score regression intercept](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation) and [partitioned heritability](https://github.com/bulik/ldsc/wiki/Partitioned-Heritability).
-2. Common issues are described in the [FAQ](https://github.com/bulik/ldsc/wiki/FAQ)
-2. The methods are described in the papers (citations below)
-
-If that doesn't work, you can get in touch with us via the [google group](https://groups.google.com/forum/?hl=en#!forum/ldsc_users).
-
-Issues with LD Hub?  Email ld-hub@bristol.ac.uk
+Currently not built for wider support. See the original python 2 implemntation (https://github.com/bulik/ldsc) for a better supported version.
 
 
 ## Citation
@@ -112,7 +76,7 @@ For LD Hub, please cite
 This project is licensed under GNU GPL v3.
 
 
-## Authors
+## Original Authors
 
 Brendan Bulik-Sullivan (Broad Institute of MIT and Harvard)
 
