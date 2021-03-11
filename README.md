@@ -43,6 +43,33 @@ You can download [European](https://data.broadinstitute.org/alkesgroup/LDSCORE/e
 
 Currently not built for wider support. See the original python 2 implemntation (https://github.com/bulik/ldsc) for a better supported version.
 
+## Changes from bulik Python 2 version.
+The following changes were made to the source code to upgrade to Python 3:
+- Print functions: changed from previous syntax
+```python
+Old: print >>sys.stderr, "fatal error"
+New: print("fatal error", file=sys.stderr)
+```
+- dictionary/list comprehension
+```python
+Old: list + dict.values()
+New: List + list(dict.values())
+```
+- Functions management
+```python
+Old: from irwls import IRWLS 
+New: from ldscore.irwls import IRWLS
+```
+- Old functions:
+```python
+Old: reduce(x,y)
+New: 
+  import functools
+  ...
+  functools.reduce(x,y)
+```
+- This is on-going.
+
 
 ## Citation
 
