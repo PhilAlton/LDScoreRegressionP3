@@ -85,6 +85,11 @@ New:
 ```python
 Old: xrange(x)
 New: range(x)
+```
+```python
+Old: DataFrame.ix[...]
+New: DataFrame.iloc[...]
+```
 - This is on-going.
 
 
