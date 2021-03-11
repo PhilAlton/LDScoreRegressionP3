@@ -56,6 +56,10 @@ Old: list + dict.values()
 New: List + list(dict.values())
 ```
 ```python
+Old: dict.values().count()
+New: list(dict.values()).count()
+```
+```python
 # not sure exactly what happened here, but this produced a TypeError
 # Limit (part of the traceback.format_exc(limit=None, chain=True) function sytax) should be an int or None
 # I think it was assuming the value of the exception (a String).
@@ -78,6 +82,9 @@ New:
   ...
   functools.reduce(x,y)
 ```
+```python
+Old: xrange(x)
+New: range(x)
 - This is on-going.
 
 
