@@ -189,7 +189,7 @@ def _check_ld_condnum(args, log, ref_ld):
 
 def _check_variance(log, M_annot, ref_ld):
     '''Remove zero-variance LD Scores.'''
-    ii = ref_ld.ix[:, 1:].var() == 0  # NB there is a SNP column here
+    ii = ref_ld.iloc[:, 1:].var() == 0  # NB there is a SNP column here
     if ii.all():
         raise ValueError('All LD Scores have zero variance.')
     else:
