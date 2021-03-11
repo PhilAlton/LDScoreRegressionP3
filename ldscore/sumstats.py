@@ -196,7 +196,7 @@ def _check_variance(log, M_annot, ref_ld):
         log.log('Removing partitioned LD Scores with zero variance.')
         ii_snp = np.array([True] + list(~ii))
         ii_m = np.array(~ii)
-        ref_ld = ref_ld.ix[:, ii_snp]
+        ref_ld = ref_ld.iloc[:, ii_snp]
         M_annot = M_annot[:, ii_m]
 
     return M_annot, ref_ld, ii
@@ -272,7 +272,7 @@ def cell_type_specific(args, log):
         chisq_max = args.chisq_max
 
     ii = np.ravel(sumstats.Z**2 < chisq_max)
-    sumstats = sumstats.ix[ii, :]
+    sumstats = sumstats.iloc[ii, :]
     log.log('Removed {M} SNPs with chi^2 > {C} ({N} SNPs remain)'.format(
             C=chisq_max, N=np.sum(ii), M=n_snp-np.sum(ii)))
     n_snp = np.sum(ii)  # lambdas are late-binding, so this works
@@ -287,7 +287,7 @@ def cell_type_specific(args, log):
         ref_ld_cts_allsnps = _read_chr_split_files(ct_ld_chr, None, log,
                                    'cts reference panel LD Score', ps.ldscore_fromlist)
         log.log('Performing regression.')
-        ref_ld_cts = np.array(pd.merge(keep_snps, ref_ld_cts_allsnps, on='SNP', how='left').ix[:,1:])
+        ref_ld_cts = np.array(pd.merge(keep_snps, ref_ld_cts_allsnps, on='SNP', how='left').iloc[:,1:])
         if np.any(np.isnan(ref_ld_cts)):
             raise ValueError ('Missing some LD scores from cts files. Are you sure all SNPs in ref-ld-chr are also in ref-ld-chr-cts')
 
@@ -344,7 +344,7 @@ def estimate_h2(args, log):
     chisq = s(sumstats.Z**2)
     if chisq_max is not None:
         ii = np.ravel(chisq < chisq_max)
-        sumstats = sumstats.ix[ii, :]
+        sumstats = sumstats.iloc[ii, :]
         log.log('Removed {M} SNPs with chi^2 > {C} ({N} SNPs remain)'.format(
                 C=chisq_max, N=np.sum(ii), M=n_snp-np.sum(ii)))
         n_snp = np.sum(ii)  # lambdas are late-binding, so this works
