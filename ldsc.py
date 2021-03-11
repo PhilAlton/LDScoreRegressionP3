@@ -80,7 +80,7 @@ class Logger(object):
         Print to log file and stdout with a single command.
 
         '''
-        print (>>self.log_fh, msg)
+        print (msg,self.log_fh)
         print (msg)
 
 
