@@ -56,7 +56,12 @@ Old: list + dict.values()
 New: List + list(dict.values())
 ```
 ```python
-# not sure exactly what happened here, but this produced a TypeError: limit (part of the traceback.format_exc(limit=None, chain=True) function sytax) should be an int. I suspect the Python2 function unpacked format_exc differently; the current function is expecting only the optional parameters of limit and chain, not the exception string which is automatically pulled from *sys.exc_info(). 
+# not sure exactly what happened here, but this produced a TypeError
+# Limit (part of the traceback.format_exc(limit=None, chain=True) function sytax) should be an int or None
+# I think it was assuming the value of the exception (a String).
+# I suspect the Python2 function unpacked format_exc differently; 
+# The current function is expecting only the optional parameters of limit and chain, 
+# Not the exception string which is automatically pulled from *sys.exc_info(). 
 Old: log.log(traceback.format_exc(ex))
 New: log.log(''.join(traceback.format_exception(ex_type, ex)), tb, limit=None, chain=True)))
 ```
