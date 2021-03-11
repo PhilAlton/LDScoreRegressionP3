@@ -90,6 +90,10 @@ New: range(x)
 Old: DataFrame.ix[...]
 New: DataFrame.iloc[...]
 ```
+```python
+Old: DataFrame.as_matrix(columns=someDataFrameIndex)
+New: DataFrame[someDataFrameIndex.values].values
+```
 - This is on-going.
 
 
