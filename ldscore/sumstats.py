@@ -451,26 +451,26 @@ def _get_rg_table(rg_paths, RG, args):
     x = pd.DataFrame()
     x['p1'] = [rg_paths[0] for i in range(1, len(rg_paths))]
     x['p2'] = rg_paths[1:len(rg_paths)]
-    x['rg'] = map(t('rg_ratio'), RG)
-    x['se'] = map(t('rg_se'), RG)
-    x['z'] = map(t('z'), RG)
-    x['p'] = map(t('p'), RG)
+    x['rg'] = list(map(t('rg_ratio'), RG))
+    x['se'] = list(map(t('rg_se'), RG))
+    x['z'] = list(map(t('z'), RG))
+    x['p'] = list(map(t('p'), RG))
     if args.samp_prev is not None and \
             args.pop_prev is not None and \
             all((i is not None for i in args.samp_prev)) and \
             all((i is not None for it in args.pop_prev)):
 
         c = map(lambda x, y: reg.h2_obs_to_liab(1, x, y), args.samp_prev[1:], args.pop_prev[1:])
-        x['h2_liab'] = map(lambda x, y: x * y, c, map(t('tot'), map(t('hsq2'), RG)))
-        x['h2_liab_se'] = map(lambda x, y: x * y, c, map(t('tot_se'), map(t('hsq2'), RG)))
+        x['h2_liab'] = list(map(lambda x, y: x * y, c, map(t('tot'), map(t('hsq2'), RG))))
+        x['h2_liab_se'] = list(map(lambda x, y: x * y, c, map(t('tot_se'), map(t('hsq2'), RG))))
     else:
-        x['h2_obs'] = map(t('tot'), map(t('hsq2'), RG))
-        x['h2_obs_se'] = map(t('tot_se'), map(t('hsq2'), RG))
+        x['h2_obs'] = list(map(t('tot'), map(t('hsq2'), RG)))
+        x['h2_obs_se'] = list(map(t('tot_se'), map(t('hsq2'), RG)))
 
-    x['h2_int'] = map(t('intercept'), map(t('hsq2'), RG))
-    x['h2_int_se'] = map(t('intercept_se'), map(t('hsq2'), RG))
-    x['gcov_int'] = map(t('intercept'), map(t('gencov'), RG))
-    x['gcov_int_se'] = map(t('intercept_se'), map(t('gencov'), RG))
+    x['h2_int'] = list(map(t('intercept'), map(t('hsq2'), RG)))
+    x['h2_int_se'] = list(map(t('intercept_se'), map(t('hsq2'), RG)))
+    x['gcov_int'] = list(map(t('intercept'), map(t('gencov'), RG)))
+    x['gcov_int_se'] = list(map(t('intercept_se'), map(t('gencov'), RG)))
     return x.to_string(header=True, index=False) + '\n'
 
 
